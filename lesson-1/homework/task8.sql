@@ -5,7 +5,6 @@ CREATE TABLE books (
     genre VARCHAR(100) DEFAULT 'Unknown'
 );
 
--- Test insert
 INSERT INTO books (title, price) VALUES ('Book One', 9.99);
 INSERT INTO books (title, price, genre) VALUES ('Book Two', 15.50, 'Fiction');
 
