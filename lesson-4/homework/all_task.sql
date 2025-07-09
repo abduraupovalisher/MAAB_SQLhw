@@ -1,3 +1,4 @@
+
 -- Task 1: Show only rows where not all columns are zero
 CREATE TABLE [dbo].[TestMultipleZero]
 (
