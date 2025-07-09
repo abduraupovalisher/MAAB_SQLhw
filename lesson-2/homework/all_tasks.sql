@@ -1,6 +1,4 @@
--- ===============================================
 -- 1. DELETE vs TRUNCATE vs DROP (with IDENTITY)
--- ===============================================
 
 -- STEP 1: Create table and insert 5 rows
 IF OBJECT_ID('dbo.test_identity', 'U') IS NOT NULL DROP TABLE dbo.test_identity;
@@ -37,9 +35,7 @@ SELECT 'After TRUNCATE' AS Phase, * FROM test_identity;
 -- DROP Test
 DROP TABLE test_identity;
 
--- ===============================================
 -- 2. Common Data Types
--- ===============================================
 
 IF OBJECT_ID('dbo.data_types_demo', 'U') IS NOT NULL DROP TABLE dbo.data_types_demo;
 
@@ -86,9 +82,8 @@ CREATE TABLE photos (
 
 -- SELECT * FROM photos;
 
--- ===============================================
+
 -- 4. Computed Columns
--- ===============================================
 
 IF OBJECT_ID('dbo.student', 'U') IS NOT NULL DROP TABLE dbo.student;
 
@@ -108,9 +103,7 @@ VALUES
 
 SELECT * FROM student;
 
--- ===============================================
 -- 5. CSV to SQL Server (BULK INSERT)
--- ===============================================
 
 IF OBJECT_ID('dbo.worker', 'U') IS NOT NULL DROP TABLE dbo.worker;
 
@@ -119,14 +112,7 @@ CREATE TABLE worker (
     name VARCHAR(100)
 );
 
--- ⚠️ Adjust the path to your CSV file
--- BULK INSERT worker
--- FROM 'C:\path\to\workers.csv'
--- WITH (
---     FIELDTERMINATOR = ',',
---     ROWTERMINATOR = '\n',
---     FIRSTROW = 2
--- );
 
--- SELECT * FROM worker;
+
+
 
