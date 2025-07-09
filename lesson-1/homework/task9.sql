@@ -1,4 +1,3 @@
--- Book table
 CREATE TABLE book (
     book_id INT PRIMARY KEY,
     title VARCHAR(255),
@@ -6,7 +5,6 @@ CREATE TABLE book (
     published_year INT
 );
 
--- Member table
 CREATE TABLE member (
     member_id INT PRIMARY KEY,
     name VARCHAR(100),
@@ -14,7 +12,6 @@ CREATE TABLE member (
     phone_number VARCHAR(20)
 );
 
--- Loan table
 CREATE TABLE loan (
     loan_id INT PRIMARY KEY,
     book_id INT,
@@ -25,7 +22,6 @@ CREATE TABLE loan (
     FOREIGN KEY (member_id) REFERENCES member(member_id)
 );
 
--- Sample inserts
 INSERT INTO book (book_id, title, author, published_year) VALUES
 (1, '1984', 'George Orwell', 1949),
 (2, 'To Kill a Mockingbird', 'Harper Lee', 1960);
