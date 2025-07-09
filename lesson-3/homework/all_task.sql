@@ -1,6 +1,4 @@
--- ===============================================
 -- DDL: Create Tables
--- ===============================================
 
 IF OBJECT_ID('dbo.Employees', 'U') IS NOT NULL DROP TABLE dbo.Employees;
 IF OBJECT_ID('dbo.Orders', 'U') IS NOT NULL DROP TABLE dbo.Orders;
@@ -31,9 +29,7 @@ CREATE TABLE Products (
     Stock INT
 );
 
--- ===============================================
 -- Task 1: Employee Salary Report
--- ===============================================
 
 WITH TopEarners AS (
     SELECT *,
@@ -59,9 +55,7 @@ FROM DepartmentAvgSalary
 ORDER BY AverageSalary DESC
 OFFSET 2 ROWS FETCH NEXT 5 ROWS ONLY;
 
--- ===============================================
 -- Task 2: Customer Order Insights
--- ===============================================
 
 SELECT 
     CASE 
@@ -82,9 +76,7 @@ GROUP BY
 HAVING SUM(TotalAmount) > 5000
 ORDER BY TotalRevenue DESC;
 
--- ===============================================
 -- Task 3: Product Inventory Check
--- ===============================================
 
 WITH RankedProducts AS (
     SELECT *,
