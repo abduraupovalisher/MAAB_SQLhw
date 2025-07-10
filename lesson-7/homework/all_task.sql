@@ -1,4 +1,4 @@
--- 1️. Retrieve All Customers With Their Orders (Include Customers Without Orders)
+-- 1. Retrieve All Customers With Their Orders (Include Customers Without Orders)
 SELECT 
     c.CustomerID, 
     c.CustomerName, 
@@ -10,7 +10,7 @@ LEFT JOIN
     Orders o ON c.CustomerID = o.CustomerID;
 
 
--- 2️. Find Customers Who Have Never Placed an Order
+-- 2. Find Customers Who Have Never Placed an Order
 SELECT 
     c.CustomerID, 
     c.CustomerName
@@ -22,7 +22,7 @@ WHERE
     o.OrderID IS NULL;
 
 
--- 3️. List All Orders With Their Products
+-- 3. List All Orders With Their Products
 SELECT 
     o.OrderID, 
     p.ProductName, 
@@ -35,7 +35,7 @@ JOIN
     Products p ON od.ProductID = p.ProductID;
 
 
--- 4️. Find Customers With More Than One Order
+-- 4. Find Customers With More Than One Order
 SELECT 
     c.CustomerID, 
     c.CustomerName, 
@@ -50,7 +50,7 @@ HAVING
     COUNT(o.OrderID) > 1;
 
 
--- 5️. Find the Most Expensive Product in Each Order
+-- 5. Find the Most Expensive Product in Each Order
 SELECT 
     od.OrderID, 
     p.ProductName, 
@@ -71,7 +71,7 @@ WHERE
     );
 
 
--- 6️. Find the Latest Order for Each Customer
+-- 6. Find the Latest Order for Each Customer
 SELECT 
     o.CustomerID, 
     MAX(o.OrderDate) AS LatestOrderDate
@@ -81,7 +81,7 @@ GROUP BY
     o.CustomerID;
 
 
--- 7️. Find Customers Who Ordered Only 'Electronics' Products
+-- 7. Find Customers Who Ordered Only 'Electronics' Products
 SELECT 
     c.CustomerID, 
     c.CustomerName
@@ -99,7 +99,7 @@ HAVING
     COUNT(DISTINCT CASE WHEN p.Category != 'Electronics' THEN p.ProductID END) = 0;
 
 
--- 8️. Find Customers Who Ordered at Least One 'Stationery' Product
+-- 8. Find Customers Who Ordered at Least One 'Stationery' Product
 SELECT DISTINCT 
     c.CustomerID, 
     c.CustomerName
@@ -115,7 +115,7 @@ WHERE
     p.Category = 'Stationery';
 
 
--- 9️. Find Total Amount Spent by Each Customer
+-- 9. Find Total Amount Spent by Each Customer
 SELECT 
     c.CustomerID, 
     c.CustomerName, 
